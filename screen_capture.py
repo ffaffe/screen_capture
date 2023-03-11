@@ -3,7 +3,8 @@ from time import sleep
 import random
 
 # safety time
-pag.FAILSAFE = True     # move cursor to top of screen to exit program
+pag.FAILSAFE = True  # move cursor to top of screen to exit program
+
 
 # def on_scrn_chk():
 #     pag.onScreen(1, 210)
@@ -16,7 +17,7 @@ def move_mouse():
 
 # clicky click time
 def sngl_click():
-    pag.click(clicks=1, interval=0.1, button='left')    #(x=1, y=1, clicks=1, interval=1, button='left')
+    pag.click(clicks=1, interval=0.1, button='left')  # (x=1, y=1, clicks=1, interval=1, button='left')
 
 
 def dbl_click():
@@ -25,6 +26,7 @@ def dbl_click():
 
 def rt_click():
     pag.click(clicks=1, interval=0.1, button='right')
+
 
 def drag_mouse():
     pag.dragTo(x, y, duration=num_seconds)  # drag mouse to XY
@@ -43,11 +45,18 @@ for _ in range(1):
     move_mouse()
     sngl_click()
     rt_click()
+
+    pag.locateOnScreen('capture4.png', confidence=0.9)
+    sleep(3)
+
+    find_loc = pag.locateOnScreen('capture4.png')
+    print('start')
+    find_loc
+    print('finish')
     sleep(0)
 
 # pag.alert('This displays some text with an OK button.')
 # pag.confirm('This displays text and has an OK and Cancel button.')
-
 
 
 # sleep(1)
@@ -55,12 +64,5 @@ for _ in range(1):
 # shot1 = pag.screenshot(region=(0,0,1920, 1080))
 # shot1.show()
 
-find_loc = pag.locateOnScreen('capture1.PNG')
-find_loc
-
-
-
 
 exit()
-
-
