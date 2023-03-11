@@ -1,6 +1,7 @@
 import pyautogui as pag
 from time import sleep
 import random
+import os
 
 # safety time
 pag.FAILSAFE = True  # move cursor to top of screen to exit program
@@ -33,27 +34,29 @@ def drag_mouse():
     pag.dragRel(xOffset, yOffset, duration=num_seconds)  # drag mouse relative to its current position
 
 
-for _ in range(1):
-    m_pos = pag.position()
-    screen_sz = pag.size()
-    on_scrn = pag.onScreen(m_pos)
-    print(on_scrn)
-    print(m_pos, screen_sz)
-    # random ints for mouse moves
-    x = random.randint(0, 1920)
-    y = random.randint(0, 1080)
-    move_mouse()
-    sngl_click()
-    rt_click()
+# for _ in range(1):
+#     m_pos = pag.position()
+#     screen_sz = pag.size()
+#     on_scrn = pag.onScreen(m_pos)
+#     print(on_scrn)
+#     print(m_pos, screen_sz)
+#     # random ints for mouse moves
+#     x = random.randint(0, 1920)
+#     y = random.randint(0, 1080)
+#     move_mouse()
+#     sngl_click()
+#     rt_click()
 
-    pag.locateOnScreen('capture4.png', confidence=0.9)
-    sleep(3)
+    # pag.locateAllOnScreen('capture4.png', confidence=0.1)
+    # sleep(1)
 
-    find_loc = pag.locateOnScreen('capture4.png')
+    find_loc = pag.locateAllOnScreen('capture4.png', confidence=0.1)
     print('start')
     find_loc
     print('finish')
     sleep(0)
+    on = os.getcwd()
+    print(on)
 
 # pag.alert('This displays some text with an OK button.')
 # pag.confirm('This displays text and has an OK and Cancel button.')
