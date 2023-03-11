@@ -16,22 +16,22 @@ def move_mouse():
 
 # clicky click time
 def sngl_click():
-    pag.click(clicks=1, interval=1, button='left')    #(x=1, y=1, clicks=1, interval=1, button='left')
+    pag.click(clicks=1, interval=0.1, button='left')    #(x=1, y=1, clicks=1, interval=1, button='left')
 
 
 def dbl_click():
-    pag.click(clicks=2, interval=1, button='left')
+    pag.click(clicks=2, interval=0.1, button='left')
 
 
 def rt_click():
-    pag.click(clicks=1, interval=1, button='right')
+    pag.click(clicks=1, interval=0.1, button='right')
 
 def drag_mouse():
-pag.dragTo(x, y, duration=num_seconds)  # drag mouse to XY
-pag.dragRel(xOffset, yOffset, duration=num_seconds)  # drag mouse relative to its current position
+    pag.dragTo(x, y, duration=num_seconds)  # drag mouse to XY
+    pag.dragRel(xOffset, yOffset, duration=num_seconds)  # drag mouse relative to its current position
 
 
-for _ in range(5):
+for _ in range(1):
     m_pos = pag.position()
     screen_sz = pag.size()
     on_scrn = pag.onScreen(m_pos)
@@ -44,6 +44,21 @@ for _ in range(5):
     sngl_click()
     rt_click()
     sleep(0)
+
+# pag.alert('This displays some text with an OK button.')
+# pag.confirm('This displays text and has an OK and Cancel button.')
+
+
+
+# sleep(1)
+#
+# shot1 = pag.screenshot(region=(0,0,1920, 1080))
+# shot1.show()
+
+find_loc = pag.locateOnScreen('capture1.PNG')
+find_loc
+
+
 
 
 exit()
