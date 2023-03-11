@@ -34,7 +34,7 @@ def drag_mouse():
     pag.dragRel(xOffset, yOffset, duration=num_seconds)  # drag mouse relative to its current position
 
 
-# for _ in range(1):
+for _ in range(1):
 #     m_pos = pag.position()
 #     screen_sz = pag.size()
 #     on_scrn = pag.onScreen(m_pos)
@@ -50,9 +50,9 @@ def drag_mouse():
     # pag.locateAllOnScreen('capture4.png', confidence=0.1)
     # sleep(1)
 
-    find_loc = pag.locateAllOnScreen('capture4.png', confidence=0.1)
+    find_loc = pag.locateOnScreen('capture4.png', confidence=0.9)
     print('start')
-    find_loc
+    print(find_loc)
     print('finish')
     sleep(0)
     on = os.getcwd()
